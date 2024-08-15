@@ -1,0 +1,56 @@
+\hypertarget{classMprpcConfig}{}\doxysection{Mprpc\+Config Class Reference}
+\label{classMprpcConfig}\index{MprpcConfig@{MprpcConfig}}
+
+
+{\ttfamily \#include $<$mprpcconfig.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMprpcConfig_ac21074b317c38b121f9afdf1659e436f}{Load\+Config\+File}} (const char $\ast$config\+\_\+file)
+\begin{DoxyCompactList}\small\item\em 负责解析加载配置文件 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMprpcConfig_a8f79cc92fb7af7a9cd758b735b5153c4}{Load}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em 查询配置项信息 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+rpcserverip rpcserverport zookeeperip zookeeperport 框架读取配置文件类 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMprpcConfig_a8f79cc92fb7af7a9cd758b735b5153c4}\label{classMprpcConfig_a8f79cc92fb7af7a9cd758b735b5153c4}} 
+\index{MprpcConfig@{MprpcConfig}!Load@{Load}}
+\index{Load@{Load}!MprpcConfig@{MprpcConfig}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily std\+::string Mprpc\+Config\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+查询配置项信息 
+
+\mbox{\Hypertarget{classMprpcConfig_ac21074b317c38b121f9afdf1659e436f}\label{classMprpcConfig_ac21074b317c38b121f9afdf1659e436f}} 
+\index{MprpcConfig@{MprpcConfig}!LoadConfigFile@{LoadConfigFile}}
+\index{LoadConfigFile@{LoadConfigFile}!MprpcConfig@{MprpcConfig}}
+\doxysubsubsection{\texorpdfstring{LoadConfigFile()}{LoadConfigFile()}}
+{\footnotesize\ttfamily void Mprpc\+Config\+::\+Load\+Config\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{config\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+负责解析加载配置文件 
+
+1.注释 2.正确的配置项 = 3.去掉开头的多余的空格
+
+去掉字符串前面多余的空格
+
+判断\+::的注释
+
+解析配置项
+
+配置项不合法
+
+rpcserverip=127.\+0.\+0.\+1~\newline
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{mprpcconfig_8h}{mprpcconfig.\+h}}\item 
+src/\mbox{\hyperlink{mprpcconfig_8cc}{mprpcconfig.\+cc}}\end{DoxyCompactItemize}

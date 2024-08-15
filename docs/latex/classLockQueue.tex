@@ -1,0 +1,56 @@
+\hypertarget{classLockQueue}{}\doxysection{Lock\+Queue$<$ T $>$ Class Template Reference}
+\label{classLockQueue}\index{LockQueue$<$ T $>$@{LockQueue$<$ T $>$}}
+
+
+异步写日志的日志队列  
+
+
+
+
+{\ttfamily \#include $<$lockqueue.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLockQueue_accc5b7ca7059eece94cfa339e9a488e2}{Push}} (const T \&data)
+\begin{DoxyCompactList}\small\item\em 多个worker线程都会写日志queue \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classLockQueue_ad3b6733d335e27509ea2960b2ab5c856}{Pop}} ()
+\begin{DoxyCompactList}\small\item\em 一个线程读日志queue，写日志文件 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Lock\+Queue$<$ T $>$}
+
+异步写日志的日志队列 
+
+pthread\+\_\+mutex\+\_\+t pthread\+\_\+condition\+\_\+t 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLockQueue_ad3b6733d335e27509ea2960b2ab5c856}\label{classLockQueue_ad3b6733d335e27509ea2960b2ab5c856}} 
+\index{LockQueue$<$ T $>$@{LockQueue$<$ T $>$}!Pop@{Pop}}
+\index{Pop@{Pop}!LockQueue$<$ T $>$@{LockQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Pop()}{Pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classLockQueue}{Lock\+Queue}}$<$ T $>$\+::Pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+一个线程读日志queue，写日志文件 
+
+日志队列为空，线程进入wait状态\mbox{\Hypertarget{classLockQueue_accc5b7ca7059eece94cfa339e9a488e2}\label{classLockQueue_accc5b7ca7059eece94cfa339e9a488e2}} 
+\index{LockQueue$<$ T $>$@{LockQueue$<$ T $>$}!Push@{Push}}
+\index{Push@{Push}!LockQueue$<$ T $>$@{LockQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classLockQueue}{Lock\+Queue}}$<$ T $>$\+::Push (\begin{DoxyParamCaption}\item[{const T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+多个worker线程都会写日志queue 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{lockqueue_8h}{lockqueue.\+h}}\end{DoxyCompactItemize}

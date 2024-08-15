@@ -1,0 +1,82 @@
+\hypertarget{classMprpcChannel}{}\doxysection{Mprpc\+Channel Class Reference}
+\label{classMprpcChannel}\index{MprpcChannel@{MprpcChannel}}
+
+
+{\ttfamily \#include $<$mprpcchannel.\+h$>$}
+
+
+
+Inheritance diagram for Mprpc\+Channel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classMprpcChannel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mprpc\+Channel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classMprpcChannel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMprpcChannel_aedbd5bb234839776d26756fd42c0902f}{Call\+Method}} (const google\+::protobuf\+::\+Method\+Descriptor $\ast$method, google\+::protobuf\+::\+Rpc\+Controller $\ast$controller, const google\+::protobuf\+::\+Message $\ast$request, google\+::protobuf\+::\+Message $\ast$response, google\+::protobuf\+::\+Closure $\ast$done)
+\begin{DoxyCompactList}\small\item\em 所有通过stub代理对象调用的rpc方法，都走到这里了，统一做rpc方法调用的数据数据序列化和网络发送 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMprpcChannel_aedbd5bb234839776d26756fd42c0902f}\label{classMprpcChannel_aedbd5bb234839776d26756fd42c0902f}} 
+\index{MprpcChannel@{MprpcChannel}!CallMethod@{CallMethod}}
+\index{CallMethod@{CallMethod}!MprpcChannel@{MprpcChannel}}
+\doxysubsubsection{\texorpdfstring{CallMethod()}{CallMethod()}}
+{\footnotesize\ttfamily void Mprpc\+Channel\+::\+Call\+Method (\begin{DoxyParamCaption}\item[{const google\+::protobuf\+::\+Method\+Descriptor $\ast$}]{method,  }\item[{google\+::protobuf\+::\+Rpc\+Controller $\ast$}]{controller,  }\item[{const google\+::protobuf\+::\+Message $\ast$}]{request,  }\item[{google\+::protobuf\+::\+Message $\ast$}]{response,  }\item[{google\+::protobuf\+::\+Closure $\ast$}]{done }\end{DoxyParamCaption})}
+
+
+
+所有通过stub代理对象调用的rpc方法，都走到这里了，统一做rpc方法调用的数据数据序列化和网络发送 
+
+service\+\_\+name
+
+method\+\_\+name
+
+获取参数的序列化字符串长度 args\+\_\+size
+
+定义rpc的请求header
+
+组织待发送的rpc请求的字符串
+
+header\+\_\+size
+
+rpcheader
+
+args
+
+打印调试信息
+
+使用tcp编程，完成rpc方法的远程调用
+
+读取配置文件rpcserver的信息 std\+::string ip = \mbox{\hyperlink{classMprpcApplication_af160dfbc0e7d879c9f1c0a3e62381693}{Mprpc\+Application\+::\+Get\+Instance()}}.Get\+Config().Load(\char`\"{}rpcserverip\char`\"{}); uint16\+\_\+t port = atoi(\mbox{\hyperlink{classMprpcApplication_af160dfbc0e7d879c9f1c0a3e62381693}{Mprpc\+Application\+::\+Get\+Instance()}}.Get\+Config().Load(\char`\"{}rpcserverport\char`\"{}).c\+\_\+str()); rpc调用方想调用service\+\_\+name的method\+\_\+name服务，需要查询zk上该服务所在的host信息
+
+/\+User\+Service\+Rpc/\+Login
+
+127.\+0.\+0.\+1\+:8000
+
+连接rpc服务节点
+
+发送rpc请求
+
+接收rpc请求的响应值
+
+反序列化rpc调用的响应数据 std\+::string response\+\_\+str(recv\+\_\+buf, 0, recv\+\_\+size); /// bug出现问题，recv\+\_\+buf中遇到\textbackslash{}0后面的数据就存不下来了，导致反序列化失败 if (!response-\/$>$Parse\+From\+String(response\+\_\+str))
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{mprpcchannel_8h}{mprpcchannel.\+h}}\item 
+src/\mbox{\hyperlink{mprpcchannel_8cc}{mprpcchannel.\+cc}}\end{DoxyCompactItemize}

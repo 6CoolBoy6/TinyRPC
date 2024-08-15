@@ -1,0 +1,35 @@
+\hypertarget{zookeeperutil_8cc}{}\doxysection{src/zookeeperutil.cc File Reference}
+\label{zookeeperutil_8cc}\index{src/zookeeperutil.cc@{src/zookeeperutil.cc}}
+{\ttfamily \#include \char`\"{}zookeeperutil.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mprpcapplication.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for zookeeperutil.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{zookeeperutil_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{zookeeperutil_8cc_a88e56049a4eb15a6832782adb2378cf1}{global\+\_\+watcher}} (zhandle\+\_\+t $\ast$zh, int type, int state, const char $\ast$path, void $\ast$watcher\+Ctx)
+\begin{DoxyCompactList}\small\item\em 全局的watcher观察器 zkserver给zkclient的通知 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{zookeeperutil_8cc_a88e56049a4eb15a6832782adb2378cf1}\label{zookeeperutil_8cc_a88e56049a4eb15a6832782adb2378cf1}} 
+\index{zookeeperutil.cc@{zookeeperutil.cc}!global\_watcher@{global\_watcher}}
+\index{global\_watcher@{global\_watcher}!zookeeperutil.cc@{zookeeperutil.cc}}
+\doxysubsubsection{\texorpdfstring{global\_watcher()}{global\_watcher()}}
+{\footnotesize\ttfamily void global\+\_\+watcher (\begin{DoxyParamCaption}\item[{zhandle\+\_\+t $\ast$}]{zh,  }\item[{int}]{type,  }\item[{int}]{state,  }\item[{const char $\ast$}]{path,  }\item[{void $\ast$}]{watcher\+Ctx }\end{DoxyParamCaption})}
+
+
+
+全局的watcher观察器 zkserver给zkclient的通知 
+
+回调的消息类型是和会话相关的消息类型
+
+zkclient和zkserver连接成功

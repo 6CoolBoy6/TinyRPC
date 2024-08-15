@@ -1,0 +1,62 @@
+\hypertarget{classMprpcApplication}{}\doxysection{Mprpc\+Application Class Reference}
+\label{classMprpcApplication}\index{MprpcApplication@{MprpcApplication}}
+
+
+防止头文件被重复包含  
+
+
+
+
+{\ttfamily \#include $<$mprpcapplication.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classMprpcApplication_a0d176ee05f4d609b5d486925740dbcb6}{Init}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em 类外实现静态方法，不用带static \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classMprpcApplication}{Mprpc\+Application}} \& \mbox{\hyperlink{classMprpcApplication_af160dfbc0e7d879c9f1c0a3e62381693}{Get\+Instance}} ()
+\item 
+static \mbox{\hyperlink{classMprpcConfig}{Mprpc\+Config}} \& \mbox{\hyperlink{classMprpcApplication_abae17613f5f217cd1970bdcab5444067}{Get\+Config}} ()
+\begin{DoxyCompactList}\small\item\em 定义唯一的实例 单例设计模式 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+防止头文件被重复包含 
+
+mprpc框架的基础类，负责框架的一些初始化操作 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMprpcApplication_abae17613f5f217cd1970bdcab5444067}\label{classMprpcApplication_abae17613f5f217cd1970bdcab5444067}} 
+\index{MprpcApplication@{MprpcApplication}!GetConfig@{GetConfig}}
+\index{GetConfig@{GetConfig}!MprpcApplication@{MprpcApplication}}
+\doxysubsubsection{\texorpdfstring{GetConfig()}{GetConfig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMprpcConfig}{Mprpc\+Config}} \& Mprpc\+Application\+::\+Get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+定义唯一的实例 单例设计模式 
+
+\mbox{\Hypertarget{classMprpcApplication_af160dfbc0e7d879c9f1c0a3e62381693}\label{classMprpcApplication_af160dfbc0e7d879c9f1c0a3e62381693}} 
+\index{MprpcApplication@{MprpcApplication}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!MprpcApplication@{MprpcApplication}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMprpcApplication}{Mprpc\+Application}} \& Mprpc\+Application\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classMprpcApplication_a0d176ee05f4d609b5d486925740dbcb6}\label{classMprpcApplication_a0d176ee05f4d609b5d486925740dbcb6}} 
+\index{MprpcApplication@{MprpcApplication}!Init@{Init}}
+\index{Init@{Init}!MprpcApplication@{MprpcApplication}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Mprpc\+Application\+::\+Init (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+类外实现静态方法，不用带static 
+
+开始加载配置文件了 rpcserver\+\_\+ip= rpcserver\+\_\+port zookeeper\+\_\+ip= zookepper\+\_\+port=
+
+std\+::cout $<$$<$ \char`\"{}rpcserverip\+:\char`\"{} $<$$<$ m\+\_\+config.\+Load(\char`\"{}rpcserverip\char`\"{}) $<$$<$ std\+::endl; std\+::cout $<$$<$ \char`\"{}rpcserverport\+:\char`\"{} $<$$<$ m\+\_\+config.\+Load(\char`\"{}rpcserverport\char`\"{}) $<$$<$ std\+::endl; std\+::cout $<$$<$ \char`\"{}zookeeperip\+:\char`\"{} $<$$<$ m\+\_\+config.\+Load(\char`\"{}zookeeperip\char`\"{}) $<$$<$ std\+::endl; std\+::cout $<$$<$ \char`\"{}zookeeperport\+:\char`\"{} $<$$<$ m\+\_\+config.\+Load(\char`\"{}zookeeperport\char`\"{}) $<$$<$ std\+::endl;
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{mprpcapplication_8h}{mprpcapplication.\+h}}\item 
+src/\mbox{\hyperlink{mprpcapplication_8cc}{mprpcapplication.\+cc}}\end{DoxyCompactItemize}

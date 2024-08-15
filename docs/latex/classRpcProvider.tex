@@ -1,0 +1,78 @@
+\hypertarget{classRpcProvider}{}\doxysection{Rpc\+Provider Class Reference}
+\label{classRpcProvider}\index{RpcProvider@{RpcProvider}}
+
+
+框架提供的专门发布rpc服务的网络对象类  
+
+
+
+
+{\ttfamily \#include $<$rpcprovider.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRpcProvider_afd8bfea1ca06f4910152c50866d83871}{Notify\+Service}} (google\+::protobuf\+::\+Service $\ast$service)
+\begin{DoxyCompactList}\small\item\em 这里是框架提供给外部使用的，可以发布rpc方法的函数接口 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRpcProvider_a74a6c6acc81159f953b4f7f2da59876e}{Run}} ()
+\begin{DoxyCompactList}\small\item\em 启动rpc服务节点，开始提供rpc远程网络调用服务 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+框架提供的专门发布rpc服务的网络对象类 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRpcProvider_afd8bfea1ca06f4910152c50866d83871}\label{classRpcProvider_afd8bfea1ca06f4910152c50866d83871}} 
+\index{RpcProvider@{RpcProvider}!NotifyService@{NotifyService}}
+\index{NotifyService@{NotifyService}!RpcProvider@{RpcProvider}}
+\doxysubsubsection{\texorpdfstring{NotifyService()}{NotifyService()}}
+{\footnotesize\ttfamily void Rpc\+Provider\+::\+Notify\+Service (\begin{DoxyParamCaption}\item[{google\+::protobuf\+::\+Service $\ast$}]{service }\end{DoxyParamCaption})}
+
+
+
+这里是框架提供给外部使用的，可以发布rpc方法的函数接口 
+
+获取了服务对象的描述信息
+
+获取服务的名字
+
+获取服务对象service的方法的数量
+
+std\+::cout $<$$<$ \char`\"{}service\+\_\+name\+:\char`\"{} $<$$<$ service\+\_\+name $<$$<$ std\+::endl;
+
+获取了服务对象指定下标的服务方法的描述（抽象描述） User\+Service Login\mbox{\Hypertarget{classRpcProvider_a74a6c6acc81159f953b4f7f2da59876e}\label{classRpcProvider_a74a6c6acc81159f953b4f7f2da59876e}} 
+\index{RpcProvider@{RpcProvider}!Run@{Run}}
+\index{Run@{Run}!RpcProvider@{RpcProvider}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily void Rpc\+Provider\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+启动rpc服务节点，开始提供rpc远程网络调用服务 
+
+读取配置文件rpcserver的信息
+
+创建\+Tcp\+Server对象
+
+绑定连接回调和消息读写回调方法 分离了网络代码和业务代码
+
+设置muduo库的线程数量
+
+把当前rpc节点上要发布的服务全部注册到zk上面，让rpc client可以从zk上发现服务 session timeout 30s zkclient 网络\+I/\+O线程 1/3 $\ast$ timeout 时间发送ping消息
+
+service\+\_\+name为永久性节点 method\+\_\+name为临时性节点
+
+/service\+\_\+name /\+User\+Service\+Rpc
+
+/service\+\_\+name/method\+\_\+name /\+User\+Service\+Rpc/\+Login 存储当前这个rpc服务节点主机的ip和port
+
+ZOO\+\_\+\+EPHEMERAL表示znode是一个临时性节点
+
+rpc服务端准备启动，打印信息
+
+启动网络服务
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{rpcprovider_8h}{rpcprovider.\+h}}\item 
+src/\mbox{\hyperlink{rpcprovider_8cc}{rpcprovider.\+cc}}\end{DoxyCompactItemize}

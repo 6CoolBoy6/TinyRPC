@@ -1,0 +1,65 @@
+\hypertarget{classLogger}{}\doxysection{Logger Class Reference}
+\label{classLogger}\index{Logger@{Logger}}
+
+
+Mprpc框架提供的日志系统  
+
+
+
+
+{\ttfamily \#include $<$logger.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLogger_abf0333b112a3b9ff809c9501a387d778}{Set\+Log\+Level}} (\mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} level)
+\begin{DoxyCompactList}\small\item\em 设置日志级别 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_ac6b11163030bda739cda7b2330d7e9df}{Log}} (std\+::string msg)
+\begin{DoxyCompactList}\small\item\em 写日志 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classLogger}{Logger}} \& \mbox{\hyperlink{classLogger_aa649f6897b665044e07ddc3dc035d8bc}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em 获取日志的单例 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mprpc框架提供的日志系统 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLogger_aa649f6897b665044e07ddc3dc035d8bc}\label{classLogger_aa649f6897b665044e07ddc3dc035d8bc}} 
+\index{Logger@{Logger}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLogger}{Logger}} \& Logger\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+获取日志的单例 
+
+\mbox{\Hypertarget{classLogger_ac6b11163030bda739cda7b2330d7e9df}\label{classLogger_ac6b11163030bda739cda7b2330d7e9df}} 
+\index{Logger@{Logger}!Log@{Log}}
+\index{Log@{Log}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily void Logger\+::\+Log (\begin{DoxyParamCaption}\item[{std\+::string}]{msg }\end{DoxyParamCaption})}
+
+
+
+写日志 
+
+写日志， 把日志信息写入lockqueue缓冲区当中 \mbox{\Hypertarget{classLogger_abf0333b112a3b9ff809c9501a387d778}\label{classLogger_abf0333b112a3b9ff809c9501a387d778}} 
+\index{Logger@{Logger}!SetLogLevel@{SetLogLevel}}
+\index{SetLogLevel@{SetLogLevel}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{SetLogLevel()}{SetLogLevel()}}
+{\footnotesize\ttfamily void Logger\+::\+Set\+Log\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}}}]{level }\end{DoxyParamCaption})}
+
+
+
+设置日志级别 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{logger_8h}{logger.\+h}}\item 
+src/\mbox{\hyperlink{logger_8cc}{logger.\+cc}}\end{DoxyCompactItemize}

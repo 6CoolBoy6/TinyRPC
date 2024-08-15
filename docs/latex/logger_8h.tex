@@ -1,0 +1,105 @@
+\hypertarget{logger_8h}{}\doxysection{src/include/logger.h File Reference}
+\label{logger_8h}\index{src/include/logger.h@{src/include/logger.h}}
+{\ttfamily \#include \char`\"{}lockqueue.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for logger.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{logger_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLogger}{Logger}}
+\begin{DoxyCompactList}\small\item\em Mprpc框架提供的日志系统 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{logger_8h_a0a1dfbcc4dd3c1a794ebdc7846c9e3ee}{LOG\+\_\+\+INFO}}(logmsgformat, ...)
+\begin{DoxyCompactList}\small\item\em 定义宏 LOG\+\_\+\+INFO(\char`\"{}xxx \%d \%s\char`\"{}, 20, \char`\"{}xxxx\char`\"{}) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{logger_8h_ac96198740669be3185f9cff7a25a167f}{LOG\+\_\+\+ERR}}(logmsgformat, ...)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} \{ \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806}{INFO}}
+, \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90}{ERROR}}
+ \}
+\begin{DoxyCompactList}\small\item\em 定义日志级别 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{logger_8h_ac96198740669be3185f9cff7a25a167f}\label{logger_8h_ac96198740669be3185f9cff7a25a167f}} 
+\index{logger.h@{logger.h}!LOG\_ERR@{LOG\_ERR}}
+\index{LOG\_ERR@{LOG\_ERR}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_ERR}{LOG\_ERR}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+ERR(\begin{DoxyParamCaption}\item[{}]{logmsgformat,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \(\backslash\)}
+\DoxyCodeLine{    \{  \(\backslash\)}
+\DoxyCodeLine{        Logger \&logger = \mbox{\hyperlink{classLogger_aa649f6897b665044e07ddc3dc035d8bc}{Logger::GetInstance}}(); \(\backslash\)}
+\DoxyCodeLine{        logger.SetLogLevel(\mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90}{ERROR}}); \(\backslash\)}
+\DoxyCodeLine{        char c[1024] = \{0\}; \(\backslash\)}
+\DoxyCodeLine{        snprintf(c, 1024, logmsgformat, \#\#\_\_VA\_ARGS\_\_); \(\backslash\)}
+\DoxyCodeLine{        logger.Log(c); \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(0) \(\backslash\)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{logger_8h_a0a1dfbcc4dd3c1a794ebdc7846c9e3ee}\label{logger_8h_a0a1dfbcc4dd3c1a794ebdc7846c9e3ee}} 
+\index{logger.h@{logger.h}!LOG\_INFO@{LOG\_INFO}}
+\index{LOG\_INFO@{LOG\_INFO}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_INFO}{LOG\_INFO}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+INFO(\begin{DoxyParamCaption}\item[{}]{logmsgformat,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \(\backslash\)}
+\DoxyCodeLine{    \{  \(\backslash\)}
+\DoxyCodeLine{        Logger \&logger = \mbox{\hyperlink{classLogger_aa649f6897b665044e07ddc3dc035d8bc}{Logger::GetInstance}}(); \(\backslash\)}
+\DoxyCodeLine{        logger.SetLogLevel(\mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806}{INFO}}); \(\backslash\)}
+\DoxyCodeLine{        char c[1024] = \{0\}; \(\backslash\)}
+\DoxyCodeLine{        snprintf(c, 1024, logmsgformat, \#\#\_\_VA\_ARGS\_\_); \(\backslash\)}
+\DoxyCodeLine{        logger.Log(c); \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(0) \(\backslash\)}
+
+\end{DoxyCode}
+
+
+定义宏 LOG\+\_\+\+INFO(\char`\"{}xxx \%d \%s\char`\"{}, 20, \char`\"{}xxxx\char`\"{}) 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9}\label{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9}} 
+\index{logger.h@{logger.h}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}}}
+
+
+
+定义日志级别 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO@{INFO}!logger.h@{logger.h}}\index{logger.h@{logger.h}!INFO@{INFO}}}\mbox{\Hypertarget{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806}\label{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806}} 
+INFO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR@{ERROR}!logger.h@{logger.h}}\index{logger.h@{logger.h}!ERROR@{ERROR}}}\mbox{\Hypertarget{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90}\label{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90}} 
+ERROR&普通信息 \\
+\hline
+
+\end{DoxyEnumFields}

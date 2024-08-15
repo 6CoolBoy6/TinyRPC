@@ -1,0 +1,85 @@
+\hypertarget{classZkClient}{}\doxysection{Zk\+Client Class Reference}
+\label{classZkClient}\index{ZkClient@{ZkClient}}
+
+
+封装的zk客户端类  
+
+
+
+
+{\ttfamily \#include $<$zookeeperutil.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classZkClient_af5acf8b5231bffb76e8bf05070a99c46}{Zk\+Client}} ()
+\item 
+\mbox{\hyperlink{classZkClient_aab9f2814fce729c15ce96bb99e177fda}{$\sim$\+Zk\+Client}} ()
+\item 
+void \mbox{\hyperlink{classZkClient_a6e51e55af4a47142bb46a714aebe61c1}{Start}} ()
+\begin{DoxyCompactList}\small\item\em zkclient启动连接zkserver \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classZkClient_a1b7f935d0decdd6c423a458c3561235c}{Create}} (const char $\ast$path, const char $\ast$data, int datalen, int state=0)
+\begin{DoxyCompactList}\small\item\em 在zkserver上根据指定的path创建znode节点 \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classZkClient_a5f440409f14e09aa366b0ef446b24a97}{Get\+Data}} (const char $\ast$path)
+\begin{DoxyCompactList}\small\item\em 根据参数指定的znode节点路径，或者znode节点的值 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+封装的zk客户端类 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classZkClient_af5acf8b5231bffb76e8bf05070a99c46}\label{classZkClient_af5acf8b5231bffb76e8bf05070a99c46}} 
+\index{ZkClient@{ZkClient}!ZkClient@{ZkClient}}
+\index{ZkClient@{ZkClient}!ZkClient@{ZkClient}}
+\doxysubsubsection{\texorpdfstring{ZkClient()}{ZkClient()}}
+{\footnotesize\ttfamily Zk\+Client\+::\+Zk\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classZkClient_aab9f2814fce729c15ce96bb99e177fda}\label{classZkClient_aab9f2814fce729c15ce96bb99e177fda}} 
+\index{ZkClient@{ZkClient}!````~ZkClient@{$\sim$ZkClient}}
+\index{````~ZkClient@{$\sim$ZkClient}!ZkClient@{ZkClient}}
+\doxysubsubsection{\texorpdfstring{$\sim$ZkClient()}{~ZkClient()}}
+{\footnotesize\ttfamily Zk\+Client\+::$\sim$\+Zk\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+关闭句柄，释放资源 My\+SQL\+\_\+\+Conn
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classZkClient_a1b7f935d0decdd6c423a458c3561235c}\label{classZkClient_a1b7f935d0decdd6c423a458c3561235c}} 
+\index{ZkClient@{ZkClient}!Create@{Create}}
+\index{Create@{Create}!ZkClient@{ZkClient}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily void Zk\+Client\+::\+Create (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{const char $\ast$}]{data,  }\item[{int}]{datalen,  }\item[{int}]{state = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+在zkserver上根据指定的path创建znode节点 
+
+先判断path表示的znode节点是否存在，如果存在，就不再重复创建了
+
+表示path的znode节点不存在
+
+创建指定path的znode节点了\mbox{\Hypertarget{classZkClient_a5f440409f14e09aa366b0ef446b24a97}\label{classZkClient_a5f440409f14e09aa366b0ef446b24a97}} 
+\index{ZkClient@{ZkClient}!GetData@{GetData}}
+\index{GetData@{GetData}!ZkClient@{ZkClient}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily std\+::string Zk\+Client\+::\+Get\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
+
+
+
+根据参数指定的znode节点路径，或者znode节点的值 
+
+根据指定的path，获取znode节点的值 \mbox{\Hypertarget{classZkClient_a6e51e55af4a47142bb46a714aebe61c1}\label{classZkClient_a6e51e55af4a47142bb46a714aebe61c1}} 
+\index{ZkClient@{ZkClient}!Start@{Start}}
+\index{Start@{Start}!ZkClient@{ZkClient}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Zk\+Client\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+zkclient启动连接zkserver 
+
+连接zkserver 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/include/\mbox{\hyperlink{zookeeperutil_8h}{zookeeperutil.\+h}}\item 
+src/\mbox{\hyperlink{zookeeperutil_8cc}{zookeeperutil.\+cc}}\end{DoxyCompactItemize}

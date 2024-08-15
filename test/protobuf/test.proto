@@ -1,0 +1,69 @@
+syntax = "proto3"; /// 声明了protobuf的版本
+
+package fixbug; /// 声明了代码所在的包（对于C++来说是namespace）
+
+/// 定义下面的选项，表示生成service服务类和rpc方法描述，默认不生成
+option cc_generic_services = true;
+
+message ResultCode
+{
+    int32 errcode = 1;
+    bytes errmsg = 2;
+}
+
+/// 数据   列表   映射表
+/// 定义登录请求消息类型  name   pwd
+/// string 往往写成 bytes （多字节存储）， 减少了字节到字符的编码转换步骤，提高了效率
+/// 写成 string ，在底层会将其转成 char* ，效率会更低
+message LoginRequest
+{
+    bytes name = 1;
+    bytes pwd = 2;
+
+    /// map<int32,string> test = 3;
+}
+
+/// 定义登录响应消息类型
+message LoginResponse
+{
+    ResultCode result = 1;
+    bool success = 2;
+}
+
+/// 定义 获取好友列表 请求消息类型
+message GetFriendListsRequest
+{
+    uint32 userid = 1;
+}
+
+message User
+{
+    bytes name = 1;
+    uint32 age = 2;
+    enum Sex
+    {
+        MAN = 0;
+        WOMAN = 1;
+    }
+    Sex sex = 3;
+}
+
+message GetFriendListsResponse
+{
+    /// 消息类型中的成员变量本身是一个对象，需要使用 mutable_result 可改变的成员对象 
+    ResultCode result = 1;
+    /// repeated，把后面的字段重复，相当于就是定义了一个列表类型
+    repeated User friend_list = 2;  
+}
+
+/// 在protobuf里面怎么定义描述rpc方法的类型 - service
+service UserServiceRpc
+{
+    /// 定义了Login的rpc方法；
+    /* 
+    protobuf本身不支持rpc功能，只是对于rpc方法的描述，
+    通过这个描述就可以做rpc请求所携带参数的序列化和反序列化
+    */
+    rpc Login(LoginRequest) returns(LoginResponse);
+    rpc GetFriendLists(GetFriendListsRequest) returns(GetFriendListsResponse);
+}
