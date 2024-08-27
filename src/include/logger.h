@@ -3,6 +3,7 @@
 #include <string>
 
 /// 定义宏 LOG_INFO("xxx %d %s", 20, "xxxx")
+/// 以可变参的方式给用户提供更便捷的日志写入方法
 #define LOG_INFO(logmsgformat, ...) \
     do \
     {  \
@@ -44,7 +45,9 @@ private:
     int m_loglevel; /// 记录日志级别
     LockQueue<std::string>  m_lckQue; /// 日志缓冲队列
 
-    Logger();
+    Logger(); /// 构造函数
+
+    /// @brief 拷贝构造都去掉，防止通过拷贝构造生成新对象
     Logger(const Logger&) = delete;
     Logger(Logger&&) = delete;
 };

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "google/protobuf/service.h"
 #include <muduo/net/TcpServer.h>
 #include <muduo/net/EventLoop.h>
@@ -20,16 +21,17 @@ public:
     void Run();
 
 private:
-    /// 组合EventLoop
+    /// 组合EventLoop，相当于 epoll
     muduo::net::EventLoop m_eventLoop;
 
     /// service服务类型信息
     struct ServiceInfo
     {
         google::protobuf::Service *m_service; /// 保存服务对象
+        /// key: messageName方法名 value: 方法描述
         std::unordered_map<std::string, const google::protobuf::MethodDescriptor*> m_methodMap; /// 保存服务方法
     };
-    /// 存储注册成功的服务对象和其服务方法的所有信息
+    /// 存储注册成功的 服务对象名称string 和 其服务方法的所有信息ServiceInfo
     std::unordered_map<std::string, ServiceInfo> m_serviceMap;
 
     /// 新的socket连接回调

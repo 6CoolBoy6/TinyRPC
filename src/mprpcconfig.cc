@@ -23,7 +23,7 @@ void MprpcConfig::LoadConfigFile(const char *config_file)
         std::string read_buf(buf);
         Trim(read_buf);
 
-        /// 判断#的注释
+        /// 判断第一个符号为 # 的注释，或 read_buf 为空 即该行没有字符，可能有多个空格
         if (read_buf[0] == '#' || read_buf.empty())
         {
             continue;

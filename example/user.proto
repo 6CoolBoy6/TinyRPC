@@ -35,6 +35,7 @@ message RegisterResponse
     bool sucess = 2;
 }
 
+/// 定义RPC服务接口类和服务方法
 service UserServiceRpc
 {
     rpc Login(LoginRequest) returns(LoginResponse);

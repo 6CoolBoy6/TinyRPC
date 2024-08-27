@@ -13,7 +13,7 @@ public:
     {
         std::cout << "do GetFriendsList service! userid:" << userid << std::endl;
         std::vector<std::string> vec;
-        vec.push_back("gao yang");
+        vec.push_back("zhao yang");
         vec.push_back("liu hong");
         vec.push_back("wang shuo");
         return vec;
